@@ -10,13 +10,7 @@ jobs:
         uses: easingthemes/ssh-deploy@v2.1.5
         env:
           SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
-          SOURCE: "./booking-service-java"
+          SOURCE: "./"
           REMOTE_HOST: ${{ secrets.EC2_INSTANCE }}
           REMOTE_USER: "ec2-user"
-          TARGET: "/home/ec2-user/TicketBookingApp"
-      - name: update packages
-        run: sudo yum update
-      - name: install java 11
-        run: sudo yum install java-11-openjdk
-      - name: install maven
-        run: sudo yum install maven
+          TARGET: "/home/ec2-user/TicketBookingApplication"

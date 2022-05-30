@@ -14,9 +14,9 @@ jobs:
           REMOTE_HOST: ${{ secrets.EC2_INSTANCE }}
           REMOTE_USER: "ec2-user"
           TARGET: "/home/ec2-user/TicketBookingApp"
-      - name: install java
-        run: yum update
+      - name: update packages
+        run: sudo yum update
       - name: install java 11
-        run: yum install java-11-openjdk
+        run: sudo yum install java-11-openjdk
       - name: install maven
-        run: yum install maven
+        run: sudo yum install maven

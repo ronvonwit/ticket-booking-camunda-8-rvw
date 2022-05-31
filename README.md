@@ -22,6 +22,10 @@ A ticket booking example using
 * sudo yum install java-11-openjdk
 * sudo update-alternatives --config javac --> selecteer optie java11
 * sudo yum install maven
+* sudo curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -
+* sudo yum install -y nodejs
+* sudo npm install -g typescript
+* sudo npm install -g ts-node
 
 ## Run RabbitMQ locally
 
@@ -30,7 +34,7 @@ sudo systemctl start docker
 docker run -p 15672:15672 -p 5672:5672 rabbitmq:3-management
 ```
 
-* http://localhost:15672/#/queues/
+* http://'ec2_host':15672/#/queues/
 * User: guest
 * Password: guest
 
@@ -60,7 +64,7 @@ ts-node src/app.ts
 If you want to understand the code, please have a look into this documentation: https://github.com/camunda/camunda-platform-get-started/tree/main/spring
 
 ```
-mvn package exec:java -f booking-service-java\
+mvn package exec:java -f booking-service-java\pom.xml
 ```
 
 ## Test

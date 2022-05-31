@@ -14,6 +14,9 @@ A ticket booking example using
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=m3MYuRKLZa8" target="_blank"><img src="http://img.youtube.com/vi/m3MYuRKLZa8/0.jpg" alt="Walkthrough" width="240" height="180" border="10" /></a>
 
+## Aanmaken instanties EC2 Linux 2
+* Server RabbitMQ: toevoegen security rechten om poort 15672 open te zetten
+
 ## Installation Amazon EC2 Linux 2
 * sudo yum update
 * sudo yum install -y amazon-linux-extras

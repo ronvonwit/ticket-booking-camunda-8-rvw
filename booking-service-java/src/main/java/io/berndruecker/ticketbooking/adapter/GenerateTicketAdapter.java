@@ -20,9 +20,8 @@ public class GenerateTicketAdapter {
 
   Logger logger = LoggerFactory.getLogger(GenerateTicketAdapter.class);
 
-  // This should be of course injected and depends on the environment.
-  // Hard coded for simplicity here
-  public static String ENDPOINT = "http://localhost:3000/ticket";
+  @Value("${spring.ticket_generation_endpoint}")
+   public static String ticket_generation_endpoint;
 
   @Autowired
   private RestTemplate restTemplate;
@@ -39,7 +38,7 @@ public class GenerateTicketAdapter {
     } else {
       
       // Call REST API, simply returns a ticketId
-      CreateTicketResponse ticket = restTemplate.getForObject(ENDPOINT, CreateTicketResponse.class);  
+      CreateTicketResponse ticket = restTemplate.getForObject(ticket_generation_endpoint, CreateTicketResponse.class);  
       logger.info("Succeeded with " + ticket);
 
       return Collections.singletonMap(ProcessConstants.VAR_TICKET_ID, ticket.ticketId);

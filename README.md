@@ -72,7 +72,7 @@ ts-node src/app.ts
 If you want to understand the code, please have a look into this documentation: https://github.com/camunda/camunda-platform-get-started/tree/main/spring
 
 ```
-mvn package exec:java -f booking-service-java\pom.xml
+mvn package exec:java -f booking-service-java/pom.xml
 ```
 
 ## Test

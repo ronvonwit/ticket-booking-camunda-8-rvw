@@ -15,7 +15,22 @@ A ticket booking example using
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=m3MYuRKLZa8" target="_blank"><img src="http://img.youtube.com/vi/m3MYuRKLZa8/0.jpg" alt="Walkthrough" width="240" height="180" border="10" /></a>
 
 ## Aanmaken instanties EC2 Linux 2
-* Server RabbitMQ: toevoegen security rechten om poort 15672 open te zetten
+
+### Server Queue Server
+* 
+* Toevoegen security rechten om poort 15672 en 5672 open te zetten
+* sudo yum update
+* sudo amazon-linux-extras enable docker=latest
+* sudo yum clean metadata
+* sudo yum install docker
+
+```
+sudo systemctl start docker
+sudo docker run --name some-rabbit -p 15672:15672 -p 5672:5672 rabbitmq:3-management
+```
+* http://'ec2_host':15672/#/queues/
+* User: guest
+* Password: guest
 
 ## Installation Amazon EC2 Linux 2
 * sudo yum update
@@ -30,17 +45,7 @@ A ticket booking example using
 * sudo npm install -g typescript
 * sudo npm install -g ts-node
 
-## Run RabbitMQ locally
-
-```
-sudo systemctl start docker
-docker run -p 15672:15672 -p 5672:5672 rabbitmq:3-management
-```
-
-* http://'ec2_host':15672/#/queues/
-* User: guest
-* Password: guest
-
+* in application.properties juiste ip adres opvoeren van Queue server
 
 ## Create Camunda Platform 8 SaaS Cluster
 

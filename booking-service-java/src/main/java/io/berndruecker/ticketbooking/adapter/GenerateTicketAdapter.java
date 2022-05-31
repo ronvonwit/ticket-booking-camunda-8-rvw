@@ -20,8 +20,8 @@ public class GenerateTicketAdapter {
 
   Logger logger = LoggerFactory.getLogger(GenerateTicketAdapter.class);
 
-  @Value("${spring.ticket_generation_endpoint}")
-   public static String ticket_generation_endpoint;
+  //@Value("${spring.ticket_generation_endpoint}")
+  public static String ticket_generation_endpoint="http://18.197.160.57:3000/ticket";
 
   @Autowired
   private RestTemplate restTemplate;

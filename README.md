@@ -14,10 +14,19 @@ A ticket booking example using
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=m3MYuRKLZa8" target="_blank"><img src="http://img.youtube.com/vi/m3MYuRKLZa8/0.jpg" alt="Walkthrough" width="240" height="180" border="10" /></a>
 
+## Installation Amazon EC2 Linux 2
+* sudo yum update
+* sudo yum install -y amazon-linux-extras
+* sudo amazon-linux-extras enable java-openjdk11
+* sudo yum clean metadata
+* sudo yum install java-11-openjdk
+* sudo update-alternatives --config javac --> selecteer optie java11
+* sudo yum install maven
 
 ## Run RabbitMQ locally
 
 ```
+sudo systemctl start docker
 docker run -p 15672:15672 -p 5672:5672 rabbitmq:3-management
 ```
 

@@ -40,10 +40,6 @@ sudo docker run --name some-rabbit -p 15672:15672 -p 5672:5672 rabbitmq:3-manage
 * sudo yum install java-11-openjdk
 * sudo update-alternatives --config javac --> selecteer optie java11
 * sudo yum install maven
-* sudo curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -
-* sudo yum install -y nodejs
-* sudo npm install -g typescript
-* sudo npm install -g ts-node
 
 * in application.properties juiste ip adres opvoeren van Queue server
 
@@ -59,13 +55,7 @@ sudo docker run --name some-rabbit -p 15672:15672 -p 5672:5672 rabbitmq:3-manage
 
 ## Run NodeJs Fake Services
 
-If you want to understand the code, please have a look into this get started tutorial: https://github.com/camunda/camunda-platform-get-started/tree/main/nodejs
-
-```
-cd fake-services-nodejs
-npm update
-ts-node src/app.ts
-```
+Eerst de drie fake services starten voordat je deze applicatie opstart.
 
 ## Run Java Ticket Booking Service
 

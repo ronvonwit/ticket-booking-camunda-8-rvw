@@ -16,23 +16,27 @@ A ticket booking example using
 
 ## Aanmaken instanties EC2 Linux 2
 
-### Server Queue Server
-* 
-* Toevoegen security rechten om poort 15672 en 5672 open te zetten
+### Installation Server Queue Server
+
 * sudo yum update
 * sudo amazon-linux-extras enable docker=latest
 * sudo yum clean metadata
 * sudo yum install docker
 
+* Toevoegen security rechten om poort 15672 en 5672 open te zetten
+
 ```
+Starten:
 sudo systemctl start docker
 sudo docker run --name some-rabbit -p 15672:15672 -p 5672:5672 rabbitmq:3-management
+
+Als eenmaal een keer gestart, middels sudo docker stop some-rabbit stoppen en sudo docker start some-rabbit starten.
 ```
 * http://'ec2_host':15672/#/queues/
 * User: guest
 * Password: guest
 
-## Installation Amazon EC2 Linux 2
+### Installation Server Ticket Booking App
 * sudo yum update
 * sudo yum install -y amazon-linux-extras
 * sudo amazon-linux-extras enable java-openjdk11
@@ -42,6 +46,7 @@ sudo docker run --name some-rabbit -p 15672:15672 -p 5672:5672 rabbitmq:3-manage
 * sudo yum install maven
 
 * in application.properties juiste ip adres opvoeren van Queue server
+* toevoegen security rechten om poort 8080 open te zetten
 
 ## Create Camunda Platform 8 SaaS Cluster
 

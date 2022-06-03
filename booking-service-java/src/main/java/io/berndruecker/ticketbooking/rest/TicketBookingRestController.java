@@ -24,7 +24,7 @@ import io.camunda.zeebe.spring.client.EnableZeebeClient;
 @SpringBootConfiguration
 @RestController
 @EnableZeebeClient
-@CrossOrigin(origins = "http://18.196.91.137:8080")
+@CrossOrigin(origins = "demo1.labmicrofrontendexample.com")
 public class TicketBookingRestController {
 
   private Logger logger = LoggerFactory.getLogger(RetrievePaymentAdapter.class);

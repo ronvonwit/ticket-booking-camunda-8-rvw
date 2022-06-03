@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ServerWebExchange;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import io.berndruecker.ticketbooking.ProcessConstants;
 import io.berndruecker.ticketbooking.adapter.RetrievePaymentAdapter;
